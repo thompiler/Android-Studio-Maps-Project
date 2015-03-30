@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+        This was the Default Generated Activity Tag
+        <activity
+            android:name=".DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName=".MyActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thom.sbapppractice.MyActivity" />
+        </activity>
+        -->
         <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message"

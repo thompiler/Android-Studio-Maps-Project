@@ -1,9 +1,11 @@
 package com.example.thom.sbapppractice;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class DisplayMessageActivity extends ActionBarActivity {
@@ -11,15 +13,15 @@ public class DisplayMessageActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_message);
+        //setContentView(R.layout.activity_display_message);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit()
-                    ;
-        }
+        TextView textView = new TextView(this);
+        textView.setTextSize(40);
+        textView.setText(message);
+
+        setContentView(textView);
     }
 
 /*
@@ -36,28 +38,13 @@ public class DisplayMessageActivity extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-
         int id = item.getItemId();
 
-        if(id == R.id.action_settings)
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
             return true;
+        }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() { }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_display_message,
-                    container, false);
-            return rootView;
-        }
     }
 }

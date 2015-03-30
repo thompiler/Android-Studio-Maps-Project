@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class MyActivity extends ActionBarActivity {
 
     //ADDED
-    public final staticc String EXTRA_MESSAGE = "com.example.thom.sbapppractice.MESSAGE";
+    public final static String EXTRA_MESSAGE = "com.example.thom.sbapppractice.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
